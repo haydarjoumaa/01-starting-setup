@@ -1,0 +1,12 @@
+import Expenseitem from "./components/Expenseitem";
+
+function App() {
+  return (
+    <div>
+      <h2>Let's get started!</h2><p>hi</p>
+      <Expenseitem/>
+    </div>
+  );
+}
+
+export default App;
