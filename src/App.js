@@ -1,11 +1,45 @@
-import Expenseitem from "./components/Expenseitem";
-
+import Expense from "./components/Expenses/Expense";
+import Newexpense from "./components/newexpense/Newexpense";
+import { useState } from "react";
+const initialexpenses = [
+  {
+    id: "e1",
+    title: "Toilet Paper",
+    amount: 94.12,
+    date: new Date(2020, 7, 14),
+  },
+  {
+    id: "e2",
+    title: "New TV",
+    amount: 799.49,
+    date: new Date(2021, 2, 12),
+  },
+  {
+    id: "e3",
+    title: "Car Insurance",
+    amount: 294.67,
+    date: new Date(2021, 2, 28),
+  },
+  {
+    id: "e4",
+    title: "New Desk (Wooden)",
+    amount: 450,
+    date: new Date(2021, 5, 12),
+  },
+];
 function App() {
+  const adddata = (newdata) => {
+    setexpenses((prev) => {
+      return [newdata, ...prev];
+    });
+  };
+  const [expenses, setexpenses] = useState(initialexpenses);
+
   return (
     <div>
       <h2>Let's get started!</h2>
-      <p>hi</p>
-      <Expenseitem />
+      <Newexpense onAdd={adddata} />
+      <Expense expenses={expenses} />
     </div>
   );
 }
