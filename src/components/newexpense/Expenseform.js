@@ -4,7 +4,7 @@ const Expenseform = (props) => {
   const [newtitle, setTitle] = useState("");
   const [newdate, setDate] = useState("");
   const [newamount, setAmount] = useState("");
-  console.log("hi");
+
   const titlehandler = (event) => {
     setTitle(event.target.value);
   };
